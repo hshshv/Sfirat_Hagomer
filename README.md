@@ -1,2 +1,0 @@
-# Sfirat Hagomerrr!
-for classrooms.
