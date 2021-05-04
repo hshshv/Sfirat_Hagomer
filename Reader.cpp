@@ -65,15 +65,27 @@ voice months[12] = { // אלף, אלפיים, שלושתאלפים וכו'
   voice(48, 3.0)
 };
 
-voice vav(49, 0.8);
-voice haiom(50, 0.9);
-voice iomLagomerShehem(51, 3.0);
-voice lagomer(52, 1.0);
-voice hashah(53, 1.0);
-voice esreh(54, 1.0);
-voice ve(55, 0.3); //וו החיבור, כמו עשרים ו*אחת
-voice ha(56, 0.3); // הא הידיעה
-voice beh(57, 0.3); //בית כמו שלוש *ב*אפריל
+voice CountingNumberOneDigits[9] = {//אחד, שתיים, שלוש וכו'
+  voice(49, 2.0),
+  voice(50, 2.0),
+  voice(51, 2.0),
+  voice(52, 2.0),
+  voice(53, 2.0),
+  voice(54, 2.0),
+  voice(55, 2.0),
+  voice(56, 2.0),
+  voice(57, 2.0)
+};
+
+voice vav(58, 0.8);
+voice haiom(59, 0.9);
+voice iomLagomerShehem(60, 3.0);
+voice lagomer(61, 1.0);
+voice hashah(62, 1.0);
+voice esreh(63, 1.0);
+voice ve(64, 0.3); //וו החיבור, כמו עשרים ו*אחת
+voice ha(65, 0.3); // הא הידיעה
+voice beh(66, 0.3); //בית כמו שלוש *ב*אפריל
 
 Reader::Reader(int TX, int RX): SOS(TX, RX)
 {
@@ -129,7 +141,7 @@ void Reader::play2digits(int number)
     /*dont play*/ return;
 
   if (number < 10)
-    play(oneDigits[number - 1]); return;
+    play(CountingNumberOneDigits[number - 1]); return;
 
   if (number == 10)
     play(towDigits[0]); return;
